@@ -1,0 +1,69 @@
+@tailwind base; /* Resets and provides basic styles from Tailwind */
+@tailwind components; /* Allows usage of pre-built components */
+@tailwind utilities; /* Enables utility classes for customization */
+
+/* Custom Global Styles */
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+
+  /* Default theme colors */
+  --primary-color: #646cff;
+  --secondary-color: #535bf2;
+  --background-dark: #242424;
+  --background-light: #ffffff;
+}
+
+body {
+  @apply bg-gray-100 text-gray-800; /* Tailwind utility classes */
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold; /* Tailwind utility for bold font */
+}
+
+a {
+  @apply text-blue-600 hover:text-blue-800; /* Tailwind utility for link styles */
+}
+
+button {
+  @apply rounded-md border border-transparent px-4 py-2 font-medium;
+  background-color: var(--primary-color);
+  color: white;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+}
+button:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Light/Dark Theme Toggle (Optional) */
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: var(--background-light);
+    color: #213547;
+  }
+  a:hover {
+    color: var(--secondary-color);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--background-dark);
+    color: rgba(255, 255, 255, 0.87);
+  }
+  button {
+    background-color: var(--primary-color);
+  }
+}
